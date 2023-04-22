@@ -4,14 +4,14 @@ import { deleteContact } from 'redux/operations';
 
 import css from '../components/Form/Form.module.css';
 
-const ContactsItem = ({ contact: { id, name, number } }) => {
+const ContactsItem = ({ contact: { id, name, phone } }) => {
   const dispatch = useDispatch();
 
   return (
     <div className={css.liitem}>
       <div>
         <span>{name}: </span>
-        <span>{number}</span>
+        <span>{phone}</span>
       </div>
       <button
         className={css.itembtn}

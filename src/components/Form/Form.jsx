@@ -13,7 +13,7 @@ export const Form = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const name = e.target.elements.name.value;
-    const number = e.target.elements.number.value;
+    const phone = e.target.elements.phone.value;
 
     const findSameName = contacts.find(
       el => el.name.toLowerCase() === name.toLowerCase()
@@ -22,7 +22,7 @@ export const Form = () => {
       e.target.reset();
       return toast.error(`${name} is already in contacts`);
     }
-    const contact = { name, number };
+    const contact = { name, phone };
     dispatch(addContact(contact));
     e.target.reset();
   };
@@ -45,7 +45,7 @@ export const Form = () => {
         <label>{'Number'}</label>
         <input
           type="tel"
-          name="number"
+          name="phone"
           // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
